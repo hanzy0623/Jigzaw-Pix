@@ -1,0 +1,349 @@
+/* Color Palette & Basic Styles */
+:root {
+    --primary-color: #A3D8F5; /* Soft sky blue */
+    --secondary-color: #FFB3D9; /* Gentle pink */
+    --accent-color: #8B5FBF; /* Playful purple */
+    --text-color: #333;
+    --light-bg: #F0F8FF; /* Alice Blue, very light */
+    --white: #FFFFFF;
+    --shadow-light: rgba(0, 0, 0, 0.15);
+    --border-radius-soft: 15px;
+    --border-radius-pill: 50px;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif; /* Our cute font */
+    background-color: var(--light-bg);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align to top */
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: var(--white);
+    padding: 30px 40px;
+    border-radius: var(--border-radius-soft);
+    box-shadow: 0 10px 30px var(--shadow-light);
+    text-align: center;
+    max-width: 900px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+h1 {
+    color: var(--accent-color);
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    animation: bounceIn 0.8s ease-out; /* Little animation for engagement */
+}
+
+h2 {
+    color: var(--primary-color);
+    font-size: 1.8em;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 10px;
+    display: inline-block; /* Makes border-bottom only as wide as text */
+}
+
+h3 {
+    color: var(--text-color);
+    font-size: 1.3em;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.instruction {
+    font-style: italic;
+    font-size: 0.95em;
+    color: #666;
+    margin-top: -10px;
+    margin-bottom: 25px;
+}
+
+/* --- Utility Classes --- */
+.hidden {
+    display: none !important;
+}
+
+/* --- Input and Button Styling --- */
+.section {
+    margin-top: 40px;
+    padding: 20px 0;
+    border-top: 1px dashed rgba(0,0,0,0.1);
+}
+.section:first-of-type {
+    border-top: none;
+}
+
+.upload-box {
+    border: 3px dashed var(--secondary-color);
+    padding: 30px;
+    border-radius: var(--border-radius-soft);
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+input[type="file"] {
+    display: none; /* Hide default file input */
+}
+
+.upload-button, .action-button {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 12px 25px;
+    border: none;
+    border-radius: var(--border-radius-pill); /* Pill shape for cuteness */
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px var(--shadow-light);
+    text-decoration: none; /* For the label acting as a button */
+    display: inline-block;
+}
+
+.upload-button:hover, .action-button:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.secondary-button {
+    background-color: #CCC;
+    color: var(--text-color);
+    margin-left: 10px;
+}
+
+.secondary-button:hover {
+    background-color: #AAA;
+    color: var(--white);
+}
+
+#fileNameDisplay {
+    font-style: italic;
+    color: #666;
+    margin-top: 5px;
+}
+
+#previewImage {
+    max-width: 150px;
+    max-height: 150px;
+    border-radius: 10px;
+    margin-top: 15px;
+    border: 2px solid var(--secondary-color);
+    object-fit: contain; /* Ensures image fits without cropping */
+}
+
+.difficulty-selection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.difficulty-selection select {
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: 2px solid var(--secondary-color);
+    font-size: 1em;
+    background-color: var(--white);
+    color: var(--text-color);
+    appearance: none; /* Remove default arrow */
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23A3D8F5%22%20d%3D%22M287%2C197.9c-3.2%2C3.2-8.3%2C3.2-11.6%2C0l-133.4-133.4c-3.2-3.2-8.3-3.2-11.6%2C0L5.4%2C197.9c-3.2%2C3.2-8.3%2C3.2-11.6%2C0s-3.2-8.3%2C0-11.6l133.4-133.4c3.2-3.2%2C8.3-3.2%2C11.6%2C0l133.4%2C133.4c3.2%2C3.2%2C3.2%2C8.3%2C0%2C11.6L287%2C197.9z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right 10px top 50%;
+    background-size: 12px auto;
+}
+
+.puzzle-area {
+    width: 600px;
+    height: 600px;
+    border: 4px dashed var(--accent-color);
+    border-radius: var(--border-radius-soft);
+    margin: 30px auto;
+    position: relative; /* Crucial for positioning pieces */
+    background-color: var(--light-bg);
+    box-shadow: inset 0 0 15px rgba(0,0,0,0.05);
+    overflow: hidden; /* Ensure pieces don't overflow during initial shuffle */
+}
+
+.puzzle-piece {
+    position: absolute;
+    cursor: grab;
+    border: 1px solid rgba(0,0,0,0.1); /* Subtle border for visibility */
+    box-sizing: border-box; /* Include padding/border in size calculation */
+    transition: box-shadow 0.1s ease; /* For hover/active state */
+    user-select: none; /* Prevent text selection */
+    z-index: 1; /* Default z-index */
+}
+
+.puzzle-piece.dragging {
+    cursor: grabbing;
+    z-index: 100; /* Bring dragging piece to front */
+    box-shadow: 0 0 15px rgba(0,0,0,0.3); /* Stronger shadow when dragging */
+}
+
+.puzzle-piece.snapped {
+    cursor: default; /* No longer draggable */
+    z-index: 50; /* Snapped pieces should be above others, but below dragging */
+    border: 1px solid rgba(0,0,0,0.05); /* Lighter border when snapped */
+}
+
+#puzzleMessage {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--accent-color);
+    margin-top: 20px;
+}
+
+/* --- Editing Section Styles --- */
+.options-group {
+    background-color: var(--light-bg);
+    padding: 20px;
+    border-radius: var(--border-radius-soft);
+    margin-bottom: 25px;
+    box-shadow: 0 5px 15px var(--shadow-light);
+}
+
+.frame-selection-buttons, .text-input-controls, .final-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.frame-option {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 8px 18px;
+    border: none;
+    border-radius: var(--border-radius-soft);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-size: 0.95em;
+    font-weight: bold;
+}
+
+.frame-option:hover, .frame-option.selected {
+    background-color: var(--accent-color);
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.frame-customization, .text-input-controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 15px 25px; /* Row and column gap */
+    margin-top: 20px;
+}
+
+.frame-customization label, .text-input-controls label {
+    font-weight: bold;
+    color: var(--accent-color);
+    min-width: 70px; /* Align labels */
+    text-align: right;
+}
+
+input[type="color"],
+input[type="text"],
+input[type="range"] {
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 2px solid var(--secondary-color);
+    font-size: 1em;
+    background-color: var(--white);
+    color: var(--text-color);
+    box-sizing: border-box;
+}
+
+input[type="color"] {
+    width: 60px;
+    height: 38px;
+    padding: 0; /* No inner padding for color picker */
+    cursor: pointer;
+}
+
+input[type="text"] {
+    flex-grow: 1;
+    max-width: 300px;
+}
+
+input[type="range"] {
+    width: 100px;
+    -webkit-appearance: none;
+    height: 8px;
+    background: var(--primary-color);
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--accent-color);
+    cursor: pointer;
+    box-shadow: 0 2px 5px var(--shadow-light);
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--accent-color);
+    cursor: pointer;
+    box-shadow: 0 2px 5px var(--shadow-light);
+}
+
+.canvas-output canvas {
+    max-width: 100%;
+    height: auto;
+    border: 4px solid var(--secondary-color);
+    border-radius: var(--border-radius-soft);
+    margin-top: 20px;
+    background-color: var(--white);
+    box-shadow: 0 5px 15px var(--shadow-light);
+    display: block; /* Remove extra space below canvas */
+}
+
+/* --- Animations --- */
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    60% {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+    80% {
+        transform: scale(0.98);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

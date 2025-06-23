@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whimsical Puzzle Creator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>✨ Whimsical Puzzle Creator ✨</h1>
+        <p>Turn your favorite pictures into fun puzzles, then add your magic touch!</p>
+
+        <div class="section upload-section" id="uploadSection">
+            <h2>Step 1: Pick a Picture!</h2>
+            <div class="upload-box">
+                <input type="file" id="imageUpload" accept="image/*">
+                <label for="imageUpload" class="upload-button">Choose Image</label>
+                <p id="fileNameDisplay">No file chosen</p>
+                <img id="previewImage" class="hidden" alt="Preview">
+            </div>
+            <button id="createPuzzleBtn" class="action-button hidden">Create Puzzle!</button>
+        </div>
+
+        <div class="section puzzle-section hidden" id="puzzleSection">
+            <h2>Step 2: Solve the Puzzle!</h2>
+            <div class="difficulty-selection">
+                <label for="difficulty">Choose Difficulty:</label>
+                <select id="difficulty">
+                    <option value="9">Easy (9 pieces)</option>
+                    <option value="16" selected>Medium (16 pieces)</option>
+                    <option value="25">Hard (25 pieces)</option>
+                    <option value="49">Expert (49 pieces)</option>
+                </select>
+                <button id="shufflePuzzleBtn" class="action-button">Shuffle & Play</button>
+            </div>
+            <div id="puzzleArea" class="puzzle-area">
+                </div>
+            <p id="puzzleMessage" class="hidden"></p>
+            <button id="backToUploadBtn" class="action-button secondary-button">⬅️ Change Image</button>
+        </div>
+
+        <div class="section edit-section hidden" id="editSection">
+            <h2>Step 3: Add Your Personal Touch!</h2>
+            <div class="canvas-output">
+                <canvas id="outputCanvas"></canvas>
+            </div>
+
+            <div class="options-group">
+                <h3>Choose a Frame:</h3>
+                <div class="frame-selection-buttons">
+                    <button class="frame-option selected" data-frame="none">None</button>
+                    <button class="frame-option" data-frame="simple">Simple Border</button>
+                    <button class="frame-option" data-frame="dotted">Dotted Border</button>
+                    <button class="frame-option" data-frame="fancy">Fancy Corner</button>
+                </div>
+                <div class="frame-customization">
+                    <label for="frameColor">Frame Color:</label>
+                    <input type="color" id="frameColor" value="#FFD700">
+                    <label for="frameThickness">Thickness:</label>
+                    <input type="range" id="frameThickness" min="5" max="40" value="15">
+                </div>
+            </div>
+
+            <div class="options-group">
+                <h3>Add Text:</h3>
+                <div class="text-input-controls">
+                    <input type="text" id="textInput" placeholder="Type your message here...">
+                    <label for="textColor">Text Color:</label>
+                    <input type="color" id="textColor" value="#000000">
+                    <label for="fontSize">Font Size:</label>
+                    <input type="range" id="fontSize" min="20" max="100" value="40">
+                    <button id="addTextBtn" class="action-button">Add Text</button>
+                </div>
+            </div>
+            <p class="instruction">Drag text to reposition it!</p>
+
+
+            <div class="final-actions">
+                <button id="downloadImageBtn" class="action-button">Download Your Masterpiece!</button>
+                <button id="shareImageBtn" class="action-button">Share Online!</button>
+                <button id="startOverBtn" class="action-button secondary-button">🔄 Start Over</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
